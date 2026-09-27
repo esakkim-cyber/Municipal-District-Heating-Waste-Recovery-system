@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3f5f0">
+    <meta name="description" content="Explore building and district heating research datasets in one place.">
+    <title>Thermal Atlas | Heating research data</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#overview" aria-label="Thermal Atlas overview">
+            <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span><strong>THERMAL</strong><small>RESEARCH ATLAS</small></span>
+        </a>
+        <div class="nav-caption">WORKSPACE</div>
+        <nav class="primary-nav">
+            <button class="nav-item active" data-category="All" type="button"><span class="nav-symbol">01</span>Overview</button>
+            <button class="nav-item" data-category="Building" type="button"><span class="nav-symbol">02</span>Building systems</button>
+            <button class="nav-item" data-category="District" type="button"><span class="nav-symbol">03</span>District energy</button>
+        </nav>
+        <div class="sidebar-rule"></div>
+        <div class="nav-caption">COLLECTION</div>
+        <a class="side-link" href="#explorer"><span class="side-dot"></span>Data explorer</a>
+        <a class="side-link" href="#field-notes"><span class="side-dot"></span>Field notes</a>
+        <div class="sidebar-bottom">
+            <div class="status-mark"><span></span> DATA CONNECTED</div>
+            <p>Research datasets<br>for better heat systems.</p>
+            <a href="https://github.com/haoranli1988/Modelica-district-heating-optimization-MPC" target="_blank" rel="noreferrer">Project source <span aria-hidden="true">↗</span></a>
+        </div>
+    </aside>
+
+    <main id="overview" class="main-content">
+        <header class="topbar">
+            <div class="breadcrumb"><span>RESEARCH</span><span class="crumb-slash">/</span><span>HEATING SYSTEMS</span></div>
+            <div class="topbar-right"><span class="live-dot"></span><span>LOCAL DATASET</span><span class="topbar-date">NTNU · NORWAY</span></div>
+        </header>
+
+        <section class="page-intro" aria-labelledby="page-title">
+            <div>
+                <div class="eyebrow"><span class="eyebrow-line"></span> A FIELD GUIDE TO HEAT</div>
+                <h1 id="page-title">Make sense of<br><em>how we heat.</em></h1>
+                <p class="intro-copy">Building comfort meets district-scale energy. Explore the real-world signals behind predictive control and heat-system optimization.</p>
+            </div>
+            <div class="intro-aside">
+                <div class="orbit" aria-hidden="true"><span class="orbit-ring"></span><span class="orbit-core"></span><span class="orbit-node"></span></div>
+                <span>MEASURED<br>INPUTS, MADE CLEAR</span>
+                <span class="intro-index">01 — 08</span>
+            </div>
+        </section>
+
+        <section class="metrics" aria-label="Dataset summary">
+            <article class="metric metric-primary"><span class="metric-label">OBSERVATIONS</span><strong id="metric-records">—</strong><span class="metric-foot">time-stamped records</span><span class="metric-spark" aria-hidden="true">↗</span></article>
+            <article class="metric"><span class="metric-label">DATA SOURCES</span><strong id="metric-sources">—</strong><span class="metric-foot">curated CSV series</span></article>
+            <article class="metric"><span class="metric-label">BUILDING STUDY</span><strong id="metric-building">—</strong><span class="metric-foot">comfort &amp; HVAC inputs</span></article>
+            <article class="metric"><span class="metric-label">DISTRICT STUDY</span><strong id="metric-district">—</strong><span class="metric-foot">hourly energy inputs</span></article>
+        </section>
+
+        <section class="explorer-section" id="explorer" aria-labelledby="explorer-title">
+            <div class="section-heading">
+                <div><div class="section-kicker">01 / EXPLORE THE SIGNALS</div><h2 id="explorer-title">Data explorer</h2></div>
+                <div class="section-count"><span class="count-dot"></span><span id="visible-count">8 sources</span> available</div>
+            </div>
+
+            <div class="explorer-toolbar">
+                <label class="select-wrap"><span>SOURCE</span><select id="dataset-select" aria-label="Choose a data source"></select></label>
+                <label class="select-wrap field-select"><span>MEASUREMENT</span><select id="field-select" aria-label="Choose a measurement"></select></label>
+                <div class="toolbar-spacer"></div>
+                <a class="download-button" id="download-link" href="#" download aria-label="Download this CSV" title="Download this CSV"><span aria-hidden="true">↓</span><span class="download-label">Download CSV</span></a>
+            </div>
+
+            <div class="chart-heading"><div><h3 id="chart-title">Loading data…</h3><p id="chart-description">Reading project datasets</p></div><div class="chart-legend"><span class="legend-line"></span><span id="chart-legend-label">MEASURED SERIES</span></div></div>
+            <div class="chart-frame">
+                <canvas id="series-chart" role="img" aria-label="Selected time series chart"></canvas>
+                <div class="chart-tooltip" id="chart-tooltip" role="status"></div>
+                <div class="chart-empty" id="chart-error" hidden></div>
+            </div>
+            <div class="chart-footer"><span>TIME <span class="unit-separator">/</span> SECONDS</span><span id="chart-range">—</span><span>DATA POINTS <span class="unit-separator">/</span> <strong id="chart-points">—</strong></span></div>
+
+            <div class="data-details">
+                <div class="dataset-description"><span class="detail-label">ABOUT THIS SERIES</span><p id="dataset-description">Choose a data source to see its description.</p><div class="dataset-tags"><span id="dataset-category" class="tag tag-green">—</span><span id="dataset-unit" class="tag tag-orange">—</span><span id="dataset-rows" class="tag">—</span></div></div>
+                <div class="sample-table-wrap"><div class="sample-heading"><span class="detail-label">SAMPLE RECORDS</span><span>FIRST 6 POINTS</span></div><div class="table-scroll"><table><thead><tr><th>TIME (S)</th><th id="table-field-heading">VALUE</th></tr></thead><tbody id="sample-rows"><tr><td colspan="2">Loading…</td></tr></tbody></table></div></div>
+            </div>
+        </section>
+
+        <section class="field-notes" id="field-notes" aria-labelledby="notes-title">
+            <div class="section-heading notes-heading"><div><div class="section-kicker">02 / THE SYSTEMS</div><h2 id="notes-title">Two scales. One energy story.</h2></div><p>From a room’s temperature to a campus heat network, these datasets illuminate connected decisions.</p></div>
+            <div class="notes-grid">
+                <article class="note-block building-note"><span class="note-number">A</span><div><div class="note-label">BUILDING · SPACE HEATING</div><h3>Comfort is the constraint.</h3><p>Outdoor conditions, indoor temperature targets, internal gains, and ventilation shape how much heat a building needs. The building study explores model predictive control for space heating and HVAC.</p><a href="#explorer" class="note-action" data-jump-category="Building">EXPLORE BUILDING DATA <span>→</span></a></div></article>
+                <article class="note-block district-note"><span class="note-number">B</span><div><div class="note-label">DISTRICT · HEAT NETWORK</div><h3>Balance the whole network.</h3><p>Hourly heat demand, weather, electricity prices, and operating inputs provide context for district heating optimization and MPC research.</p><a href="#explorer" class="note-action" data-jump-category="District">EXPLORE DISTRICT DATA <span>→</span></a></div></article>
+                <article class="note-block method-note"><span class="note-number">C</span><div><div class="note-label">HOW TO READ THIS ATLAS</div><h3>Inputs, not solved outputs.</h3><p>This browser experience makes the supplied CSV inputs explorable. The original optimization models remain in Modelica and Python; the dashboard does not run those solvers.</p><a class="note-action" href="/api/datasets">VIEW DATA API <span>↗</span></a></div></article>
+            </div>
+        </section>
+
+        <footer class="page-footer"><span>THERMAL ATLAS <span class="footer-sep">/</span> DISTRICT HEATING RESEARCH</span><span>DATA FROM THE PROJECT COLLECTION · NTNU, NORWAY</span></footer>
+    </main>
+</div>
+</body>
+</html>

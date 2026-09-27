@@ -1,0 +1,9 @@
+org\heatlab\atlas\ProjectDataService$Overview.class
+org\heatlab\atlas\ProjectDataService$SeriesResponse.class
+org\heatlab\atlas\ProjectDataService$LoadedDataset.class
+org\heatlab\atlas\ProjectDataService.class
+org\heatlab\atlas\ProjectDataService$DatasetSummary.class
+org\heatlab\atlas\ProjectDataController.class
+org\heatlab\atlas\DistrictHeatingAtlasApplication.class
+org\heatlab\atlas\ProjectDataService$Point.class
+org\heatlab\atlas\ProjectDataService$DatasetDefinition.class
