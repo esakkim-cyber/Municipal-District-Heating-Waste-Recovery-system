@@ -26,6 +26,3 @@ For the package for MPC of DH system, please cite [Hou J. Investigation of Model
 [Li H. Economic optimization for heat prosumer-based district heating systems in unidirectional heating markets](https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/2837506).
 
 [Hou J. Investigation of Model Predictive Control Application in District Heating Systems with Distributed Sources](https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/3016473).
-
-## Acknowledgements
-The package is the output of the Norwegian research council project under FRIPRO/FRINATEK program Understanding Behaviour of District Heating Systems Integrating Distributed Sources (project number 262707). In addition, the maintenance of the package receives funding from the EU research project Climate Positive Circular Communities (ARV) (grant agreement ID: 101036723).
